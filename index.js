@@ -11,17 +11,24 @@ appd.profile({
   tierName: 'test-tier',
   nodeName: 'test-node',
   logging: {
-    'logfiles': [
-      {
-        'root_directory': '/tmp/appd-test',
-        'filename': 'echo_%N.log',
-        'level': 'TRACE',
-        'max_size': 5242880,
-        'max_files': 10,
-        //'outputType': 'console'
-      }
-    ]
-  }
+        logfiles: 
+            [
+                {
+                    filename: "nodejs_agent_%N.log",
+                    level: "TRACE",
+                    max_size: 5242880,
+                    max_files: 10,
+                    // outputType: "console"
+                },
+                {
+                    filename: "nodejs_agent_%N.protolog",
+                    level: "TRACE",
+                    max_size: 5242880,
+                    channel: "protobuf",
+                    max_files: 10
+                }
+            ]
+    }
 });
 
 const express = require('express');
