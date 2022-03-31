@@ -13,7 +13,7 @@ appd.profile({
   logging: {
     'logfiles': [
       {
-        'root_directory': '/tmp/appd',
+        'root_directory': '/tmp/appd-test',
         'filename': 'echo_%N.log',
         'level': 'TRACE',
         'max_size': 5242880,
